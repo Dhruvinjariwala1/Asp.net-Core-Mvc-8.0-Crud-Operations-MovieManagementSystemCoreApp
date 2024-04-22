@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MovieManagementSystemCoreApp.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Moviename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DirectorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProducerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActressName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieVerdict)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieBudget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieReleaseYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Moviename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirectorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProducerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActressName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieVerdict)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieBudget)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieReleaseYear)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Movieid">Update</a> |
+                <a asp-action="Details" asp-route-id="@item.Movieid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Movieid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
